@@ -3,7 +3,6 @@ import Squares from "./components/squares";
 import { MainContainer, Row, Board } from "./style/boardstyle";
 
 function App() {
-  const [text, setWinner] = useState("");
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", "", ""]);
   const [player, setPlayer] = useState("0");
 
@@ -25,10 +24,10 @@ function App() {
     const winner = checkWinner();
     if (winner) {
       clearGame();
-      // alert(`${winner} won the Game !`);
-      const win = () => {
-        setWinner(winner);
-      };
+      alert(`${winner} won the Game !`);
+      // const win = () => {
+      //   setWinner(winner);
+      // };
     }
   });
 
@@ -55,7 +54,6 @@ function App() {
 
   return (
     <MainContainer>
-      <p></p>
       <Board>
         <Row>
           <Squares onClick={() => onSquareClick(0)} state={board[0]} />
